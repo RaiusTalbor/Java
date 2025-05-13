@@ -1,9 +1,6 @@
-
 public class Java_lernen {
 
 	public static void main(String[] args) {
-
-		//Kommentar
 
 		System.out.println("Hallo Welt");
 		System.out.print("x ");				//ohne Zeilenumbruch
@@ -119,6 +116,20 @@ public class Java_lernen {
 			//speichere immer eine Kopie vom Wert an der aktuellen Stelle in die Variable "names2", die vom Typ String ist.
 			//hier kann ich auf die Variable zugreifen; es wird nur eine Kopie angesprochen, die Originale bleiben unver_ndert!
 		}
+
+		//Fehlerbehandlung ---------------------------------------------------
+
+		try {
+			//versuche
+		} 
+		catch (Exception e) {
+			//falls Fehler aufgetreten
+		}
+		finally {
+			//immer danach, egal ob Fehler oder nicht
+		}
+
+		throw new fehlertyp ("Ein Fehler ist aufgetreten");
 		
 		//Methoden -----------------------------------------------------------
 		
@@ -131,5 +142,11 @@ public class Java_lernen {
 		return result;
 	}	
 	//public oder private, static kann man auch weglassen, Rückgabewert, Parameter
-	
+
+	//Generics, parametrisierter Typ -----------------------------------------
+
+	public <T> generics () {
+		T element = "Hier könnte jeder Objekttyp oder jede Klasse stehen, die gerade gebraucht wird";
+		//T ist Platzhalter und kann an jeder Stelle eines Typs stehen, wo es benötigt wird
+	}
 }

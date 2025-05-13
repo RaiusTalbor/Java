@@ -24,4 +24,8 @@ public class Animal {
 		this.age = age;
 	}
 
+	public final void methode() {
+		//Diese Methode darf von den Unterklassen nicht verändert werden
+	}
+
 }
