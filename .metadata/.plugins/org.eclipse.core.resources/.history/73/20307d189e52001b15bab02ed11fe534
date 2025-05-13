@@ -1,8 +1,0 @@
-
-public class Cat {
-
-	public void purr() {
-		System.out.println("Schnurr Schnurr");
-	}
-	
-}
