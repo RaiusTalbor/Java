@@ -1,53 +1,38 @@
 
 public class Car {
 
-	//Attribute
+	//Attribute --------------------------------------------------------------
 	
-	public String colour;			//normalerweise niemals public!
+	public String colour;	//normalerweise niemals public, hier aber wegen Zugriff von au√üen
 	private String brand;
 	private int ps;
 	
-	//Konstruktor
-	public Car(String colour, String brand, int ps) {		//Parameter...aus was soll Klasse bestehen
-		this.colour = colour;								//was sind die Parameter
+	//Konstruktor ------------------------------------------------------------
+	public Car(String colour, String brand, int ps) {
+		//f√ºhrt bei Instanziierung aus
+		//dazu da, damit nichts public sein muss
+
+		this.colour = colour;
 		this.brand = brand;
 		this.ps= ps;
 	}
 	
-	//Methoden
+	//Methoden ---------------------------------------------------------------
 	
 	public void drive(int speed) {
-		System.out.println("Das Auto f‰hrt..." + speed + "km/h");
+		System.out.println("Das Auto f_hrt..." + speed + "km/h");
 	}
 	
 	public void drive() {
-		System.out.println("Das Auto f‰hrt...");
-	}
-
-	public String getColour() {
-		return colour;
+		//√ºberladen
+		System.out.println("Das Auto f_hrt...");
 	}
 
 	public void setColour(String colour) {
 		this.colour = colour;
 	}
 
-	public String getBrand() {
-		return brand;
+	public String getColour() {
+		return colour;
 	}
-
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-
-	public int getPs() {
-		return ps;
-	}
-
-	public void setPs(int ps) {
-		this.ps = ps;
-	}
-	
-		
-	
 }
