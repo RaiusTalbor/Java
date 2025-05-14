@@ -129,7 +129,10 @@ public class Java_lernen {
 			//immer danach, egal ob Fehler oder nicht
 		}
 
-		throw new fehlertyp ("Ein Fehler ist aufgetreten");
+		int fehler = 1;
+		if (fehler == 0) {
+			throw new ArithmeticException ("Ein Fehler ist aufgetreten");
+		}
 		
 		//Methoden -----------------------------------------------------------
 		
@@ -143,10 +146,36 @@ public class Java_lernen {
 	}	
 	//public oder private, static kann man auch weglassen, Rückgabewert, Parameter
 
+	//Interface --------------------------------------------------------------
+
+	//wie Klasse, nur mit Interface
+	public interface InterfaceJavaLernen {
+		//wie eine Klasse, nur alles offen gelassen, oftmals auch nur für Konstanten
+		//für Mehrfachvererbung
+	}
+
 	//Generics, parametrisierter Typ -----------------------------------------
 
-	public <T> generics () {
-		T element = "Hier könnte jeder Objekttyp oder jede Klasse stehen, die gerade gebraucht wird";
-		//T ist Platzhalter und kann an jeder Stelle eines Typs stehen, wo es benötigt wird
+	//T ist Platzhalter und kann an jeder Stelle eines Typs stehen, wo es benötigt wird
+
+	public class Box<T> {
+		private T value;
+
+		public void setValue(T value) {
+			this.value = value;
+		}
+
+		public T getValue() {
+			return value;
+		}
+
+		//Anwendungsbeispiel
+		//wenn ich G[] einschränken will, kann ich auch "extends value" dahinterschreiben, 
+		//dann werden nur Typen mit Oberklasse value erlaubt (davon aber alle Unterklassen)
+		public <G> void printArray(G[] array) {
+        	for (G element : array) {
+            System.out.println(element);
+        	}
+    	}
 	}
 }
