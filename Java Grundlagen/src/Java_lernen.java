@@ -72,6 +72,14 @@ public class Java_lernen {
 		}
 		System.out.println();	
 		}
+
+		//Objekte ------------------------------------------------------------
+
+		//Objekt erstellen
+		Object name2 = new Object(); 
+		
+		//Methode aufrufen
+		name2.methode();
 		
 		//If-Abfragen --------------------------------------------------------
 
@@ -178,4 +186,6 @@ public class Java_lernen {
         	}
     	}
 	}
+
+	//Swing ------------------------------------------------------------------
 }
