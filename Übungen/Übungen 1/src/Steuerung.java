@@ -26,5 +26,9 @@ public class Steuerung {
 
         //Fakultaet fa = new Fakultaet();
         //fa.berechne(zahl);
+
+        anderesZahlensystem dd = new anderesZahlensystem();
+        dd.DezimalinBasis(3, 16);
+        dd.BasisinDezimal(Integer.toString(1010), 2);
     }
 }
