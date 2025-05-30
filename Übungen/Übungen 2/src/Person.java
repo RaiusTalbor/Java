@@ -3,9 +3,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Person {
 
-    public String name;
-
-    public LocalDate gebdatum;
+    private String name;
+    private LocalDate gebdatum;
 
     public Person () {
         this.name = "Namenlos :c";
@@ -19,13 +18,12 @@ public class Person {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         gebdatum = LocalDate.parse(Datum, formatter);
-        System.out.println("Geburtsdatum ist: " + gebdatum);
+        //System.out.println("Geburtsdatum ist: " + gebdatum + ".");
 
     }
 
     public LocalDate getGeb() {
-        System.out.println("Das Geburtsdatum ist " + gebdatum);
-
+        //System.out.println("Das Geburtsdatum ist " + gebdatum + ".");
         return gebdatum;
     }
 
@@ -35,7 +33,6 @@ public class Person {
     public boolean geburtstag(Person person) {
 
         boolean rückgabe = false;
-
         LocalDate heute = LocalDate.now();
 
         int tag = heute.getDayOfMonth();
@@ -44,8 +41,8 @@ public class Person {
         int gebtag = person.gebdatum.getDayOfMonth();
         int gebmonat = person.gebdatum.getMonthValue();
 
-        if (gebmonat > monat) {
-            if (gebtag > tag) {
+        if (gebmonat >= monat) {
+            if (gebmonat == monat && gebtag > tag) {
                 rückgabe = true;
             }
             else {
@@ -54,6 +51,7 @@ public class Person {
         }
         else {
             rückgabe = false;
+
         }
 
         return rückgabe;
@@ -63,11 +61,8 @@ public class Person {
     public int alter() {
 
         int aktuellesalter;
-
         LocalDate heute = LocalDate.now();
-
         int jahr = heute.getYear();
-
         int gebjahr = this.gebdatum.getYear();
 
         //rechne
@@ -79,5 +74,4 @@ public class Person {
         
         return aktuellesalter;
     }
-
 }
