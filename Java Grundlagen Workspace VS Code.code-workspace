@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "Java Grundlagen"
+		},
+		{
+			"path": "Objektorientiertes Programmieren Lernen"
+		},
+		{
+			"path": "Übungen"
+		},
+		{
+			"path": "Vererbung lernen"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"src"
+		],
+		"java.project.referencedLibraries": []
+	}
+}
