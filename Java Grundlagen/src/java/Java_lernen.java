@@ -189,5 +189,63 @@ public class Java_lernen {
     	}
 	}
 
+	//ein bisschen Advanced-Zeug unter Projekt TODO-Liste, ab hier unvollständig
+
 	//Swing ------------------------------------------------------------------
+
+	public class void Swing () {
+		//Fenster erstellen
+		JFrame mainFrame = new JFrame;
+        mainFrame = new JFrame("TODO-Liste");
+        mainFrame.setSize(800, 600);
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.setResizable(false);
+        mainFrame.setVisible(true);
+
+		// Menü "Datei"
+        JMenu dateiMenu = new JMenu("Datei");
+        JMenuItem beendenItem = new JMenuItem("Beenden");
+        JMenuItem hilfe = new JMenuItem("Hilfe");
+
+        // Menüeinträge zeichnen
+        dateiMenu.add(hilfe);
+        dateiMenu.add(beendenItem);
+
+        // Aktionen hinzufügen
+        beendenItem.addActionListener(e -> System.exit(0));
+
+		// Menü "neues Item"
+        JMenu neueListeMenu = new JMenu("Neues Item");
+        JMenuItem neueAufgabe = new JMenuItem("Neue Aufgabe");
+        JMenuItem neueNotiz = new JMenuItem("Neue Notiz");
+        neueListeMenu.add(neueAufgabe);
+        neueListeMenu.add(neueNotiz);
+
+		//--> viel unter TODO-Liste 
+	}
+
+	//Javadoc
+	/*
+	 * Über jeder Methode und Liste bzw. globale Var.
+	 * Kann bei VSC nicht so einfach erstellt werden, erkennt die Syntax aber.
+	 * Erstellung bisher nur über IntelliJ
+	 */
+
+	/**
+     * Die Speicherliste selbst kann wie ein Päckchen angesehen werden, was viele weitere Päckchen enthält, mit denen dann die konkrete
+     * Aufgabe identifiziert und rekonstruiert werden kann. 
+	 * Diese Funktion ist notwendig, um einen Crash bei Programmstart zu verhindern, da sonst zum
+     * Anzeigen der Aufgaben {@link #aufgabenNeuZeichnen} verwendet wird. Dies funktioniert nicht, da
+     * {@link #aufgabenNeuZeichnen} zusätzlich noch {@link #aufgabeVerstecken(Aufgabe)} verwendet, was nicht funktioniert,
+     * wenn noch keine Aufgaben angezeigt wurden. Außerdem wurde die for-Schleife eingespart, die die yKoordinaten
+     * aller Tabs ({@link Tab}) zurücksetzt, was zum Start ja nicht benötigt wird. <br>
+     * Die Funktion iteriert also nur durch die {@link #aufgabenliste} und ordnet jeder Aufgabe an, sich zu zeichnen.
+     * Das große Paket dient der leichten Handhabung für das Speichern. So ist kein Parsen notwendig und es braucht nur eine Liste
+     * geladen und gespeichert werden, die das Programm je nach Bedarf auspacken kann.
+     * 
+     * @see Aufgabe
+     * @see Aufgabe#speichern
+	 * 
+	 * @param aufgabe Aufgabe, die versteckt werden soll.
+     */
 }
